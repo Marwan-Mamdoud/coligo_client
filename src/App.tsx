@@ -1,5 +1,4 @@
 import "./App.css";
-// import { useTranslation } from "react-i18next";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import Layout from "./Components/Layout";
@@ -14,7 +13,6 @@ import requireAuth from "./Components/Auth/requireAuth";
 import AuthPage from "./Components/Auth/Auth";
 
 function App() {
-  // const { t, i18n } = useTranslation();
   const ProtecedHome = requireAuth(Home);
   const ProtecedAnnouncements = requireAuth(AnnouncementsPage);
   const ProtecedQuizes = requireAuth(QuizesPages);
