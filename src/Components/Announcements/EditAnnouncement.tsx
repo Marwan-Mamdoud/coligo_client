@@ -55,25 +55,28 @@ export default function AnnouncementFormEdit() {
 
   useEffect(() => {
     const getAnnouncement = async (): Promise<void> => {
-      dipatch(setLoading(true));
-      const result = await getAnnouncementById(id!);
-      if (
-        result &&
-        typeof result === "object" &&
-        !Array.isArray(result) &&
-        "category" in result &&
-        "description" in result
-      ) {
-        setFormData({
-          category: result.category,
-          description: result.description,
-        });
+      try {
+        dipatch(setLoading(true));
+        const result = await getAnnouncementById(id!);
+        if (
+          result &&
+          typeof result === "object" &&
+          !Array.isArray(result) &&
+          "category" in result &&
+          "description" in result
+        ) {
+          setFormData({
+            category: result.category,
+            description: result.description,
+          });
+          dipatch(setLoading(false));
+        }
+        dipatch(setLoading(false));
+      } catch (error) {
         dipatch(setLoading(false));
       }
-      dipatch(setLoading(false));
     };
     getAnnouncement();
-    dipatch(setLoading(false));
   }, [dipatch, id]);
 
   return (
