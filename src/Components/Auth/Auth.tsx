@@ -28,14 +28,14 @@ export default function AuthPage() {
         <h1>Authentication</h1>
         {isAuthenticated ? (
           <>
-            <p className="login_text">You are logged in</p>
+            <p className="login_text">Welcome</p>
             <button onClick={handleLogout} className="Logout_btn">
               Logout
             </button>
           </>
         ) : (
           <>
-            <p className="logout_text">You are not logged in</p>
+            <p className="logout_text">Please Loggin First!</p>
             <button onClick={handleLogin} className="Login_btn">
               Login
             </button>

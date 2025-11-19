@@ -1,6 +1,6 @@
 import React from "react";
+import App from "./App";
 
-test("app component exists", () => {
-  const App = require("./App").default;
+test("App component exists", () => {
   expect(typeof App).toBe("function");
 });

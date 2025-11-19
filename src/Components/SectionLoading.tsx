@@ -2,11 +2,11 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
-export default function LoadingOverlay() {
+export default function SectionLoading() {
   const isLoading = useSelector((state: RootState) => state.loading.isLoading);
   return (
     <div
-      className={`loading-overlay ${
+      className={`loading_section ${
         isLoading ? "loading-overlay--visible" : ""
       }`}
       role="status"

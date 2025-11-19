@@ -26,7 +26,6 @@ export default function Hero() {
       }
     };
     fetchMainData();
-    dispatch(setLoading(false));
   }, [dispatch]);
 
   return (

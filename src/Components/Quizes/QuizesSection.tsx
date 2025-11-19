@@ -20,6 +20,7 @@ export default function QuizesSection({ quizzes }: QuizzesProps) {
       {quizzes.map((quiz: Quiz) => {
         return (
           <QuizesCard
+            key={quiz._id}
             title={quiz.title}
             topic={quiz.topic}
             date={new Date(quiz.createdAt!)}
