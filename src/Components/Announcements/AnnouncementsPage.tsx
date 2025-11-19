@@ -22,17 +22,21 @@ export default function AnnouncementsPage() {
 
   useEffect(() => {
     const getAllData = async (): Promise<void> => {
-      dispatch(setLoading(true));
-      const result = await getAnnouncements();
-      if (result) {
-        if (Array.isArray(result)) {
-          dispatch(setAnnouncements(result));
-          dispatch(setLoading(false));
+      try {
+        dispatch(setLoading(true));
+        const result = await getAnnouncements();
+        if (result) {
+          if (Array.isArray(result)) {
+            dispatch(setAnnouncements(result));
+            dispatch(setLoading(false));
+          }
         }
+        dispatch(setLoading(false));
+      } catch (error) {
+        dispatch(setLoading(false));
       }
     };
     getAllData();
-    dispatch(setLoading(false));
   }, [dispatch]);
 
   const handleDelete = async (id: string): Promise<void> => {

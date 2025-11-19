@@ -70,7 +70,6 @@ export default function AnnouncementFormEdit() {
         });
         dipatch(setLoading(false));
       }
-      console.log(result);
       dipatch(setLoading(false));
     };
     getAnnouncement();
